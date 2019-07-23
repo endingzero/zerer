@@ -1,6 +1,5 @@
 server:
   port: 8761
-# ·şÎñÃû³Æ
 spring:
   application:
     name: zerer-eureka
