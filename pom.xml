@@ -32,6 +32,7 @@
 
     <modules>
         <module>register</module>
+        <module>core</module>
     </modules>
 
     <dependencies>
