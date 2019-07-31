@@ -24,12 +24,12 @@ import static springfox.documentation.builders.PathSelectors.regex;
  */
 public class SwaggerConfig {
 
-    @Value("#{'${spring.cloud.client.hostname}'+':9999'}")
+    @Value("#{'${spring.cloud.client.hostname}'+':8762'}")
     private String host;
 
     @Bean
     public Docket openApi() {
-        return build("开放接口管理", "/account/.*");
+        return build("账户接口", "/account/.*");
     }
 
 
@@ -50,9 +50,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2).host(host).groupName(groupName)
                 .genericModelSubstitutes(DeferredResult.class).genericModelSubstitutes(Result.class)
                 .useDefaultResponseMessages(false).forCodeGeneration(false).pathMapping("/")
-                // .additionalModels(typeResolver.resolve(BookingList.class),
-                // typeResolver.resolve(Settlement.class))
-                .globalOperationParameters(list).select().paths(regex(paths))// 过滤的接口
+                .globalOperationParameters(list).select().paths(regex(paths))
                 .build()
                 .apiInfo(new ApiInfoBuilder().title(groupName)
                         .description("统一返回格式\n{\n \"code\": 0,\n \"data\": [],\n \"msg\": \"成功\"\n},data返回值请查看对应接口的Example Value")
