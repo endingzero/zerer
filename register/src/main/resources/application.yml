@@ -5,8 +5,7 @@ spring:
     name: zerer-eureka
 eureka:
   instance:
-    hostname: registry
-    prefer-ip-address: true
+    hostname: register
   client:
     registerWithEureka: false
     fetchRegistry: false

@@ -1,4 +1,4 @@
-package com.zjw.zerer;
+package com.zjw.zerer.accountservice;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

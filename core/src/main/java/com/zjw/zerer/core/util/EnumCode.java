@@ -1,4 +1,4 @@
-package com.zjw.core.util;
+package com.zjw.zerer.core.util;
 
 public enum EnumCode {
 

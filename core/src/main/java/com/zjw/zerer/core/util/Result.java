@@ -1,4 +1,4 @@
-package com.zjw.core.util;
+package com.zjw.zerer.core.util;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

@@ -1,6 +1,6 @@
-package com.zjw.zerer.controller;
+package com.zjw.zerer.accountservice.controller;
 
-import com.zjw.core.util.Result;
+import com.zjw.zerer.core.util.Result;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

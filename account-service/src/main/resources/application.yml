@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: account-service
+management:
+  server:
+    port: 8762
+server:
+  port: 8762
+  servlet:
+    context-path: /account-service
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://register:8761/eureka/
+  instance:
+    statusPageUrlPath: http://${spring.cloud.client.hostname}:${server.port}${server.servlet.context-path}/swagger-ui.html
+    healthCheckUrlPath: /actuator/health
+    appname: account-service
+    instanceId: ${spring.cloud.client.hostname}:${spring.application.name}:${server.port}
+    metadata-map:
+      management:
+        port: ${management.server.port}
