@@ -9,9 +9,9 @@
     </parent>
 
     <groupId>com.zjw.zerer</groupId>
-    <artifactId>register</artifactId>
+    <artifactId>eureka-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>register</name>
+    <name>eureka-server</name>
 
     <dependencies>
         <dependency>

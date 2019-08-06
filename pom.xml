@@ -31,7 +31,7 @@
     </properties>
 
     <modules>
-        <module>register</module>
+        <module>eureka-server</module>
         <module>core</module>
         <module>account-service</module>
     </modules>

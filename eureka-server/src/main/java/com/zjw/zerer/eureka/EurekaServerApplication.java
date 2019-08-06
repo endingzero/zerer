@@ -1,4 +1,4 @@
-package com.zjw.zerer.register;
+package com.zjw.zerer.eureka;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,10 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 @SpringBootApplication
 @EnableEurekaServer
-public class RegisterApplication {
+public class EurekaServerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(RegisterApplication.class, args);
+        SpringApplication.run(EurekaServerApplication.class, args);
     }
 
 }
