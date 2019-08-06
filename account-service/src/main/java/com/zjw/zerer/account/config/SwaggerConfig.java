@@ -1,4 +1,4 @@
-package com.zjw.zerer.accountservice.config;
+package com.zjw.zerer.account.config;
 
 import com.google.common.collect.Lists;
 import com.zjw.zerer.core.util.Result;
@@ -28,7 +28,7 @@ import static springfox.documentation.builders.PathSelectors.regex;
 @Configuration
 public class SwaggerConfig {
 
-    @Value("#{'${spring.cloud.client.hostname}'+':8762'}")
+    @Value("#{'${spring.cloud.client.hostname}'+':${server.port}'}")
     private String host;
 
     @Bean
@@ -43,13 +43,13 @@ public class SwaggerConfig {
 
     private Docket build(String groupName, String paths, boolean commonParam) {
         ArrayList<Parameter> list = new ArrayList<>();
-        if (commonParam) {
-            list = Lists.newArrayList(
-                    new ParameterBuilder().name("token").description("登陆token,公共参数").modelRef(new ModelRef("String"))
-                            .parameterType("query").required(true).build(),
-                    new ParameterBuilder().name("shopId").description("店铺ID,公共参数").modelRef(new ModelRef("String"))
-                            .parameterType("query").required(true).build());
-        }
+//        if (commonParam) {
+//            list = Lists.newArrayList(
+//                    new ParameterBuilder().name("token").description("登陆token,公共参数").modelRef(new ModelRef("String"))
+//                            .parameterType("query").required(true).build(),
+//                    new ParameterBuilder().name("shopId").description("店铺ID,公共参数").modelRef(new ModelRef("String"))
+//                            .parameterType("query").required(true).build());
+//        }
 
         return new Docket(DocumentationType.SWAGGER_2).host(host).groupName(groupName)
                 .genericModelSubstitutes(DeferredResult.class).genericModelSubstitutes(Result.class)

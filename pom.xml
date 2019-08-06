@@ -33,6 +33,7 @@
     <modules>
         <module>register</module>
         <module>core</module>
+        <module>account-service</module>
     </modules>
 
     <dependencies>
