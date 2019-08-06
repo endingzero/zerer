@@ -8,9 +8,9 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <groupId>com.zjw.zerer</groupId>
-    <artifactId>miscellaneous</artifactId>
+    <artifactId>miscellaneous-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>miscellaneous</name>
+    <name>miscellaneous-service</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
