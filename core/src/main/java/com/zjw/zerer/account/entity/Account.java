@@ -2,6 +2,10 @@ package com.zjw.zerer.account.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import com.zjw.zerer.core.constants.AppTableName;
 import lombok.Data;
 
@@ -33,7 +37,7 @@ public class Account {
 
     private LocalDateTime updateTime;
 
-    private LocalDateTime update_pwd;
+    private Boolean update_pwd;
 
 
 }
