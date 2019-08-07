@@ -1,5 +1,6 @@
 package com.zjw.zerer.miscellaneous.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import com.zjw.zerer.account.entity.Account;
 import com.zjw.zerer.core.exception.ApiException;
 import com.zjw.zerer.core.util.EnumCode;
@@ -27,11 +28,16 @@ public class MiscellaneousController {
 
     @GetMapping("/get")
     @ApiOperation(value = "获取账户", notes = "获取员工")
+    @HystrixCommand(fallbackMethod = "accountFallBack")
     public Result<Account> get(@RequestParam(value = "id") Long id) {
         Result<Account> result = accountClient.get(id);
         if (!Result.CODE_SUCCESS.equals(result.getCode())) {
             throw new ApiException(EnumCode.BAD_REQUEST);
         }
         return Result.ok(result.getData());
+    }
+
+    public Result<Account> accountFallBack(Long id){
+        return Result.fail();
     }
 }
