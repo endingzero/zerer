@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Random;
+
 /**
  * @ClassName: MiscellaneousController
  * @Description: 杂项controller
@@ -34,6 +36,13 @@ public class MiscellaneousController {
         if (!Result.CODE_SUCCESS.equals(result.getCode())) {
             throw new ApiException(EnumCode.BAD_REQUEST);
         }
+        //测试熔断默认时间为2000ms
+//        int sleepTime = new Random().nextInt(3000);
+//        try {
+//            Thread.sleep(Long.valueOf(sleepTime));
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         return Result.ok(result.getData());
     }
 
