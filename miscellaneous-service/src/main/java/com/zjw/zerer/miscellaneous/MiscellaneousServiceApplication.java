@@ -7,7 +7,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @EnableFeignClients
 @EnableDiscoveryClient
-@SpringBootApplication(scanBasePackages = {"com.zjw.zerer.core.common"})
+@SpringBootApplication
 public class MiscellaneousServiceApplication {
 
     public static void main(String[] args) {

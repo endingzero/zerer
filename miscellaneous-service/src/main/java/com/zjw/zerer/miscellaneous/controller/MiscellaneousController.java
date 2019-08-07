@@ -7,7 +7,6 @@ import com.zjw.zerer.core.util.Result;
 import com.zjw.zerer.miscellaneous.client.AccountClient;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Profile;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,7 +29,7 @@ public class MiscellaneousController {
     @ApiOperation(value = "获取账户", notes = "获取员工")
     public Result<Account> get(@RequestParam(value = "id") Long id) {
         Result<Account> result = accountClient.get(id);
-        if(!Result.CODE_SUCCESS.equals(result.getCode())) {
+        if (!Result.CODE_SUCCESS.equals(result.getCode())) {
             throw new ApiException(EnumCode.BAD_REQUEST);
         }
         return Result.ok(result.getData());
