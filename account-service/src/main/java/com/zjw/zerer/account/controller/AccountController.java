@@ -38,12 +38,12 @@ public class AccountController {
             throw new ApiException(EnumCode.BAD_REQUEST);
         }
         //测试熔断默认时间为2000ms
-        int sleepTime = new Random().nextInt(6000);
-        try {
-            Thread.sleep(Long.valueOf(sleepTime));
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        int sleepTime = new Random().nextInt(6000);
+//        try {
+//            Thread.sleep(Long.valueOf(sleepTime));
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         return Result.ok(account);
     }
 }
