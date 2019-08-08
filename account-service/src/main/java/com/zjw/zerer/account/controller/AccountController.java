@@ -6,11 +6,14 @@ import com.zjw.zerer.core.exception.ApiException;
 import com.zjw.zerer.core.util.EnumCode;
 import com.zjw.zerer.core.util.Result;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Random;
 
 
 /**
@@ -21,6 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/account")
+@Slf4j
 public class AccountController {
 
     @Autowired
@@ -32,6 +36,13 @@ public class AccountController {
         Account account = accountService.getById(id);
         if(account == null) {
             throw new ApiException(EnumCode.BAD_REQUEST);
+        }
+        //测试熔断默认时间为2000ms
+        int sleepTime = new Random().nextInt(6000);
+        try {
+            Thread.sleep(Long.valueOf(sleepTime));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
         return Result.ok(account);
     }

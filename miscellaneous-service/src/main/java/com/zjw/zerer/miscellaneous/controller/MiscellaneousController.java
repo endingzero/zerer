@@ -7,7 +7,9 @@ import com.zjw.zerer.core.util.EnumCode;
 import com.zjw.zerer.core.util.Result;
 import com.zjw.zerer.miscellaneous.client.AccountClient;
 import io.swagger.annotations.ApiOperation;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -23,6 +25,7 @@ import java.util.Random;
  */
 @RestController
 @RequestMapping("/miscellaneous")
+@Slf4j
 public class MiscellaneousController {
 
     @Autowired
@@ -32,17 +35,13 @@ public class MiscellaneousController {
     @ApiOperation(value = "获取账户", notes = "获取员工")
     @HystrixCommand(fallbackMethod = "accountFallBack")
     public Result<Account> get(@RequestParam(value = "id") Long id) {
+        long start = System.currentTimeMillis();
         Result<Account> result = accountClient.get(id);
+        log.info("time:" + (System.currentTimeMillis() - start));
         if (!Result.CODE_SUCCESS.equals(result.getCode())) {
             throw new ApiException(EnumCode.BAD_REQUEST);
         }
-        //测试熔断默认时间为2000ms
-//        int sleepTime = new Random().nextInt(3000);
-//        try {
-//            Thread.sleep(Long.valueOf(sleepTime));
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
+
         return Result.ok(result.getData());
     }
 
