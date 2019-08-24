@@ -46,7 +46,7 @@
             <artifactId>springfox-swagger2</artifactId>
             <version>${swagger.version}</version>
         </dependency>
-        <!-- mybatis-plus S -->
+        <!-- mybatis-plus-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -62,7 +62,11 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>${mybatis-plus.version}</version>
         </dependency>
-        <!-- mybatis-plus E -->
+        <!-- oauth2.0 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-oauth2</artifactId>
+        </dependency>
     </dependencies>
 
 
