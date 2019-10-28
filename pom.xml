@@ -32,6 +32,7 @@
 
     <modules>
         <module>zerer-eureka</module>
+        <module>zerer-config</module>
         <module>zerer-core</module>
         <module>zerer-account-service</module>
         <module>zerer-miscellaneous-service</module>
