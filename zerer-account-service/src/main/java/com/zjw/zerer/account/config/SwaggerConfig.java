@@ -1,6 +1,5 @@
 package com.zjw.zerer.account.config;
 
-import com.google.common.collect.Lists;
 import com.zjw.zerer.core.util.Result;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.service.Parameter;
@@ -8,8 +7,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.context.request.async.DeferredResult;
 import springfox.documentation.builders.ApiInfoBuilder;
-import springfox.documentation.builders.ParameterBuilder;
-import springfox.documentation.schema.ModelRef;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;

@@ -1,3 +1,4 @@
+/*
 package com.zjw.zerer.account.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,12 +17,14 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 import org.springframework.security.oauth2.provider.token.store.redis.RedisTokenStore;
 
+*/
 /**
  * @ClassName: OAuth2Config
  * @Description: OAuth2配置文件
  * @author: jiewei
  * @date: 2019/8/27
- */
+ *//*
+
 @Configuration
 public class OAuth2Config {
 
@@ -86,3 +89,4 @@ public class OAuth2Config {
     }
 }
 
+*/
