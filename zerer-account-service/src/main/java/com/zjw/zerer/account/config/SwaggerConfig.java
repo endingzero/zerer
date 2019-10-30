@@ -2,6 +2,8 @@ package com.zjw.zerer.account.config;
 
 import com.zjw.zerer.core.util.Result;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 import springfox.documentation.service.Parameter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -23,7 +25,7 @@ import static springfox.documentation.builders.PathSelectors.regex;
  */
 @EnableSwagger2
 @Configuration
-public class SwaggerConfig {
+public class SwaggerConfig extends WebMvcConfigurationSupport {
 
     @Value("#{'${spring.cloud.client.hostname}'+':${server.port}'}")
     private String host;
@@ -57,4 +59,19 @@ public class SwaggerConfig {
                         .description("统一返回格式\n{\n \"code\": 0,\n \"data\": [],\n \"msg\": \"成功\"\n},data返回值请查看对应接口的Example Value")
                         .version("0.1").build());
     }
+
+    @Override
+    protected void addResourceHandlers(ResourceHandlerRegistry registry) {
+        // 解决静态资源无法访问
+        registry.addResourceHandler("/**")
+                .addResourceLocations("classpath:/static/");
+        // 解决swagger无法访问
+        registry.addResourceHandler("/swagger-ui.html")
+                .addResourceLocations("classpath:/META-INF/resources/");
+        // 解决swagger的js文件无法访问
+        registry.addResourceHandler("/webjars/**")
+                .addResourceLocations("classpath:/META-INF/resources/webjars/");
+
+    }
+
 }
