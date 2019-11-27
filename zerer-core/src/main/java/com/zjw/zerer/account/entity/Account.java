@@ -1,5 +1,6 @@
 package com.zjw.zerer.account.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
@@ -18,10 +19,11 @@ import java.time.LocalDateTime;
  * @date: 2019/8/6
  */
 @Data
-@TableName(AppTableName.Account)
+@TableName(AppTableName.ACCOUNT)
 public class Account {
-    @TableId
-    private Long id;
+
+    @TableId(type = IdType.INPUT)
+    private Long accountId;
 
     private String mobile;
 

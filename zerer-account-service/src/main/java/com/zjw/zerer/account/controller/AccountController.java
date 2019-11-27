@@ -1,5 +1,6 @@
 package com.zjw.zerer.account.controller;
 
+import com.zjw.zerer.account.dto.AccountAddRequest;
 import com.zjw.zerer.account.service.AccountService;
 import com.zjw.zerer.account.entity.Account;
 import com.zjw.zerer.core.exception.ApiException;
@@ -8,10 +9,7 @@ import com.zjw.zerer.core.util.Result;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Random;
 
@@ -29,6 +27,13 @@ public class AccountController {
 
     @Autowired
     private AccountService accountService;
+
+    @PostMapping("/add")
+    @ApiOperation(value = "添加账户", notes = "添加账户")
+    public Result<Void> add(@RequestParam(value = "id") AccountAddRequest request) {
+        accountService.add(request);
+        return Result.ok();
+    }
 
     @GetMapping("/get")
     @ApiOperation(value = "获取账户", notes = "获取员工")
