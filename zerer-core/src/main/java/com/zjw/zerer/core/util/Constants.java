@@ -10,4 +10,6 @@ public interface Constants {
     String DB_NAME_PREFIX = "zerer";
 
     String TABLE_ROUTER_SPILT = "_";
+
+    String DEFAULT_PACKAGE = "com.zjw.zerer.defaultdb";
 }

@@ -3,13 +3,10 @@ package com.zjw.zerer.account.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zjw.zerer.account.dto.AccountAddRequest;
-import com.zjw.zerer.account.entity.Account;
-import com.zjw.zerer.account.entity.AccountSequence;
-import com.zjw.zerer.account.mapper.AccountMapper;
-import com.zjw.zerer.account.mapper.AccountSequenceMapper;
 import com.zjw.zerer.account.service.AccountSequenceService;
-import com.zjw.zerer.account.service.AccountService;
 import com.zjw.zerer.core.util.DbNameGenerator;
+import com.zjw.zerer.defaultdb.entity.AccountSequence;
+import com.zjw.zerer.defaultdb.mapper.AccountSequenceMapper;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;

@@ -1,9 +1,8 @@
 package com.zjw.zerer.account.service;
 
 import com.zjw.zerer.account.dto.AccountAddRequest;
-import com.zjw.zerer.account.entity.Account;
-import com.zjw.zerer.account.entity.AccountSequence;
 import com.zjw.zerer.core.base.BaseService;
+import com.zjw.zerer.defaultdb.entity.AccountSequence;
 
 /**
  * @ClassName: AccountService
