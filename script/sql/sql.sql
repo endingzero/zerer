@@ -19,5 +19,5 @@ CREATE TABLE `app_account` (
   `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `update_pwd` bit(1) DEFAULT b'0' COMMENT '是否修改过密码 0未修改 1:已修改',
   PRIMARY KEY (`id`),
-  UNIQUE KEY `idx_mobile` (`mobile`) USING BTREE
+  KEY `idx_mobile` (`mobile`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
