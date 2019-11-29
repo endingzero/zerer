@@ -16,4 +16,10 @@ public interface Constants {
     String DEFAULT_PACKAGE = "com.zjw.zerer.defaultdb";
 
     String CUSTOM_PACKAGE = "com.zjw.zerer.customdb";
+
+    String TABLE_SUFFIX = "_0";
+
+    String DELEGATE_ROWBOUNDS_OFFSET = "delegate.rowBounds.offset";
+
+    String DELEGATE_ROWBOUNDS_LIMIT = "delegate.rowBounds.limit";
 }

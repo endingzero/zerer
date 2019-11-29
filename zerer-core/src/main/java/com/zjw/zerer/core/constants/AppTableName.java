@@ -7,7 +7,16 @@ package com.zjw.zerer.core.constants;
  * @date: 2019/8/6
  */
 public interface AppTableName {
-    String ACCOUNT = "app_account";
 
+    /**
+     * 主表
+     */
     String ACCOUNT_SEQUENCE = "app_account_sequence";
+
+    /**
+     * 分表
+     */
+    String ACCOUNT = "app_account_0";
+
+
 }

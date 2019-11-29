@@ -41,7 +41,7 @@ public class AccountServiceImpl extends ServiceImpl<AccountMapper,Account> imple
         account.setCreateTime(LocalDateTime.now());
         account.setActivated(Boolean.TRUE);
         account.setMaster(Boolean.TRUE);
-        account.setSalt(String.valueOf(Math.random()*9+1));
+        account.setSalt("0");
         account.setMobile(request.getMobile());
         account.setPassword(request.getPassword());
         RouterHolder.setDefaultRouter(accountSequence.getDbName(),accountSequence.getTableName(),accountSequence.getAccountId());

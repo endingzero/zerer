@@ -31,7 +31,6 @@ public class DbNameGenerator {
     public static String generateTabelName(Long accountId) {
 
         StringBuilder sb = new StringBuilder();
-        sb.append(Constants.TABLE_ROUTER_SPILT);
         // 数据库的分界
         if (accountId <= ONE_DB_MAX_ID) {
             // 此时一个库
