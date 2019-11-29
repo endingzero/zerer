@@ -12,8 +12,8 @@ import org.springframework.context.annotation.Profile;
  * @author: zhuangjiewei
  * @create: 2019/03/28 15:10
  */
-@Configuration
-@MapperScan(basePackages = {"com.zjw.zerer.account.mapper"})
+//@Configuration
+//@MapperScan(basePackages = {"com.zjw.zerer.account.mapper"})
 public class MyBatisPlusConfiguration {
 	/**
 	 * 输出格式化SQL

@@ -4,6 +4,7 @@ import com.alibaba.druid.pool.DruidDataSource;
 import com.baomidou.mybatisplus.autoconfigure.SpringBootVFS;
 import com.baomidou.mybatisplus.core.MybatisConfiguration;
 import com.baomidou.mybatisplus.core.MybatisXMLLanguageDriver;
+import com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor;
 import com.baomidou.mybatisplus.extension.spring.MybatisSqlSessionFactoryBean;
 import com.zjw.zerer.core.util.Constants;
 import lombok.extern.slf4j.Slf4j;
@@ -123,23 +124,21 @@ public class DefaultDataSourceConfig {
     /**
      * 根据数据源创建SqlSessionFactory
      */
-//    @Bean(name = "defaultSqlSessionFactory")
-//    @Primary
-//    public SqlSessionFactory sqlSessionFactory(
-//            @Qualifier("defaultDataSource") DataSource dataSource,
-//            @Qualifier("defaultGlobalConfiguration") GlobalConfiguration defaultGlobalConfiguration) throws Exception {
-//        MybatisSqlSessionFactoryBean sqlSessionFactory = new MybatisSqlSessionFactoryBean();
-//        sqlSessionFactory.setDataSource(dataSource);// 指定数据源(这个必须有，否则报错)
-//        sqlSessionFactory.setVfs(SpringBootVFS.class);
-//        MybatisConfiguration configuration = new MybatisConfiguration();
-//        configuration.setDefaultScriptingLanguage(MybatisXMLLanguageDriver.class);
-//        configuration.setJdbcTypeForNull(JdbcType.NULL);
-//        configuration.setMapUnderscoreToCamelCase(true);
-//        configuration.setCacheEnabled(false);
-//        sqlSessionFactory.setConfiguration(configuration);
-//        sqlSessionFactory.setGlobalConfig(defaultGlobalConfiguration);
-//        return sqlSessionFactory.getObject();
-//    }
-
+    @Bean(name = "defaultSqlSessionFactory")
+    @Primary
+    public SqlSessionFactory sqlSessionFactory(
+            @Qualifier("defaultDataSource") DataSource dataSource) throws Exception {
+        MybatisSqlSessionFactoryBean sqlSessionFactory = new MybatisSqlSessionFactoryBean();
+        // 指定数据源(这个必须有，否则报错)
+        sqlSessionFactory.setDataSource(dataSource);
+        sqlSessionFactory.setVfs(SpringBootVFS.class);
+        MybatisConfiguration configuration = new MybatisConfiguration();
+        configuration.setDefaultScriptingLanguage(MybatisXMLLanguageDriver.class);
+        configuration.setJdbcTypeForNull(JdbcType.NULL);
+        configuration.setMapUnderscoreToCamelCase(true);
+        configuration.setCacheEnabled(false);
+        sqlSessionFactory.setConfiguration(configuration);
+        return sqlSessionFactory.getObject();
+    }
 
 }

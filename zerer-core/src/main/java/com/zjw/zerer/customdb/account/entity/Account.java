@@ -1,4 +1,4 @@
-package com.zjw.zerer.account.entity;
+package com.zjw.zerer.customdb.account.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

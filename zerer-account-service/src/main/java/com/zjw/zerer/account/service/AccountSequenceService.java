@@ -1,6 +1,6 @@
 package com.zjw.zerer.account.service;
 
-import com.zjw.zerer.account.dto.AccountAddRequest;
+import com.zjw.zerer.customdb.account.dto.AccountAddRequest;
 import com.zjw.zerer.core.base.BaseService;
 import com.zjw.zerer.defaultdb.entity.AccountSequence;
 
@@ -17,5 +17,5 @@ public interface AccountSequenceService extends BaseService<AccountSequence> {
      * @param request   请求参数
      * @return          返回id
      */
-    Long add(AccountAddRequest request);
+    AccountSequence add(AccountAddRequest request);
 }

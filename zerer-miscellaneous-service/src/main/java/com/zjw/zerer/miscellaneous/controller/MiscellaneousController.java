@@ -1,7 +1,7 @@
 package com.zjw.zerer.miscellaneous.controller;
 
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
-import com.zjw.zerer.account.entity.Account;
+import com.zjw.zerer.customdb.account.entity.Account;
 import com.zjw.zerer.core.exception.ApiException;
 import com.zjw.zerer.core.util.EnumCode;
 import com.zjw.zerer.core.util.Result;
@@ -9,13 +9,10 @@ import com.zjw.zerer.miscellaneous.client.AccountClient;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.Random;
 
 /**
  * @ClassName: MiscellaneousController

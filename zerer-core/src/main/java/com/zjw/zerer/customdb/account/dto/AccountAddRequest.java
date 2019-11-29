@@ -1,4 +1,4 @@
-package com.zjw.zerer.account.dto;
+package com.zjw.zerer.customdb.account.dto;
 
 import lombok.Data;
 
@@ -14,4 +14,6 @@ public class AccountAddRequest {
     private String mobile;
 
     private String password;
+
+    private Integer batchNum;
 }

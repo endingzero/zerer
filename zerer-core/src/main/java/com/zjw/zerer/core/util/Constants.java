@@ -11,5 +11,9 @@ public interface Constants {
 
     String TABLE_ROUTER_SPILT = "_";
 
+    String COMMA_SPILT = ",";
+
     String DEFAULT_PACKAGE = "com.zjw.zerer.defaultdb";
+
+    String CUSTOM_PACKAGE = "com.zjw.zerer.customdb";
 }

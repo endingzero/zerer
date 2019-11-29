@@ -9,5 +9,5 @@ package com.zjw.zerer.core.constants;
 public interface AppTableName {
     String ACCOUNT = "app_account";
 
-    String ACCOUNT_SEQUENCE = "app_sequence";
+    String ACCOUNT_SEQUENCE = "app_account_sequence";
 }

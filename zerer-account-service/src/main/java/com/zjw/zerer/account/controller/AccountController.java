@@ -1,8 +1,8 @@
 package com.zjw.zerer.account.controller;
 
-import com.zjw.zerer.account.dto.AccountAddRequest;
+import com.zjw.zerer.customdb.account.dto.AccountAddRequest;
 import com.zjw.zerer.account.service.AccountService;
-import com.zjw.zerer.account.entity.Account;
+import com.zjw.zerer.customdb.account.entity.Account;
 import com.zjw.zerer.core.exception.ApiException;
 import com.zjw.zerer.core.util.EnumCode;
 import com.zjw.zerer.core.util.Result;
@@ -10,8 +10,6 @@ import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Random;
 
 
 /**
@@ -28,9 +26,18 @@ public class AccountController {
     @Autowired
     private AccountService accountService;
 
+    @PostMapping("/batch/add")
+    @ApiOperation(value = "批量添加账户", notes = "批量添加账户")
+    public Result<Void> batchAdd(AccountAddRequest request) {
+        for(int i = 0; i< request.getBatchNum(); i++) {
+            accountService.add(request);
+        }
+        return Result.ok();
+    }
+
     @PostMapping("/add")
     @ApiOperation(value = "添加账户", notes = "添加账户")
-    public Result<Void> add(@RequestParam(value = "id") AccountAddRequest request) {
+    public Result<Void> add(AccountAddRequest request) {
         accountService.add(request);
         return Result.ok();
     }

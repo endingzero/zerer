@@ -2,7 +2,7 @@ package com.zjw.zerer.account.service.impl;
 
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.zjw.zerer.account.dto.AccountAddRequest;
+import com.zjw.zerer.customdb.account.dto.AccountAddRequest;
 import com.zjw.zerer.account.service.AccountSequenceService;
 import com.zjw.zerer.core.util.DbNameGenerator;
 import com.zjw.zerer.defaultdb.entity.AccountSequence;
@@ -26,7 +26,7 @@ public class AccountSequenceServiceImpl extends ServiceImpl<AccountSequenceMappe
      * @return          id
      */
     @Override
-    public Long add(AccountAddRequest request) {
+    public AccountSequence add(AccountAddRequest request) {
 
         AccountSequence accountSequence = new AccountSequence();
         accountSequence.setCreateTime(LocalDateTime.now());
@@ -34,6 +34,6 @@ public class AccountSequenceServiceImpl extends ServiceImpl<AccountSequenceMappe
         accountSequence.setDbName(DbNameGenerator.generateDbName(accountSequence.getAccountId()));
         accountSequence.setTableName(DbNameGenerator.generateTabelName(accountSequence.getAccountId()));
         this.baseMapper.updateById(accountSequence);
-        return accountSequence.getAccountId();
+        return accountSequence;
     }
 }

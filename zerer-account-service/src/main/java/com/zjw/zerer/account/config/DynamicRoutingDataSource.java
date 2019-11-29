@@ -1,7 +1,7 @@
 package com.zjw.zerer.account.config;
 
+import com.zjw.zerer.core.thread.RouterHolder;
 import org.springframework.jdbc.datasource.AbstractDataSource;
-import org.springframework.lang.Nullable;
 import org.springframework.util.Assert;
 
 import javax.sql.DataSource;
@@ -53,8 +53,12 @@ public class DynamicRoutingDataSource extends AbstractDataSource {
     }
 
     private String determineCurrentLookupKey() {
+
         // 从共享线程中获取数据源名称
-        return null;
+        if (RouterHolder.getTarget() == null) {
+            return DEFAULT;
+        }
+        return RouterHolder.getTarget().getDatasource();
     }
 
     @Override

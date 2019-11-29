@@ -1,7 +1,7 @@
-package com.zjw.zerer.account.mapper;
+package com.zjw.zerer.customdb.account.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.zjw.zerer.account.entity.Account;
+import com.zjw.zerer.customdb.account.entity.Account;
 
 /**
  * @ClassName: AccountDao
