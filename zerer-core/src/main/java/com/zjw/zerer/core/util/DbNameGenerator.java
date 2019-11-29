@@ -9,6 +9,11 @@ public class DbNameGenerator {
 
     private final static int FOUR_DB_MAX_ID = 400;
 
+    /**
+     * 生成数据库名
+     * @param accountId
+     * @return
+     */
     public static String generateDbName(Long accountId) {
 
         StringBuilder sb = new StringBuilder();
@@ -28,7 +33,12 @@ public class DbNameGenerator {
     }
 
 
-    public static String generateTabelName(Long accountId) {
+    /**
+     * 生成数据表名
+     * @param accountId
+     * @return
+     */
+    public static String generateTableName(Long accountId) {
 
         StringBuilder sb = new StringBuilder();
         // 数据库的分界

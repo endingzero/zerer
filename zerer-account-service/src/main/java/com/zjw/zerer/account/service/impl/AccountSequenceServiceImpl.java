@@ -32,7 +32,7 @@ public class AccountSequenceServiceImpl extends ServiceImpl<AccountSequenceMappe
         accountSequence.setCreateTime(LocalDateTime.now());
         this.baseMapper.insert(accountSequence);
         accountSequence.setDbName(DbNameGenerator.generateDbName(accountSequence.getAccountId()));
-        accountSequence.setTableName(DbNameGenerator.generateTabelName(accountSequence.getAccountId()));
+        accountSequence.setTableName(DbNameGenerator.generateTableName(accountSequence.getAccountId()));
         this.baseMapper.updateById(accountSequence);
         return accountSequence;
     }
